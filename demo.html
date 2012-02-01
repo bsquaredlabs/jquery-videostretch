@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+<!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>jquery-videostretch</title>
+  <meta name="description" content="Demo page for jquery-videostretch plugin">
+  <meta name="author" content="Vassilis Triglianos">
+  
+  <script src="js/jquery-1.7.1.min.js"></script>	
+  <script src="js/jquery-videostretch.js"></script>		
+  <script>
+  
+  	$(function(){
+  		$('video').videostretch();
+ });
+  </script>
+  <style>
+		body {
+			background-color: #ccc;
+			color:#F6F5F5;
+			margin: 0;
+			padding: 0;
+			font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		}
+		
+		article {
+			margin: 10px 0 0 20px;
+			font-size: 14px;
+			border: 1px solid #212e35;
+			box-shadow: 2px 2px 2px rgba(15, 15, 15, 0.6), inset -0.5px -0.5px 1px #3e5563;
+			border-radius: 8px;
+			padding:10px;
+			width: 550px;
+			background: #273740;
+		}
+		
+		article h2{
+			font-weight:normal;
+			color:#c2d3dd;
+		}
+		
+		article p{
+			text-shadow: 0.5px 0.5px 1px #212e35 ;
+		}
+		
+		.olive{
+			color: #868c7d;
+		}
+	</style>
+
+</head>
+
+<body>
+		<article>
+			<h2><span class='olive'>Videostretch</span> jQuery plugin - Stretch HTML5 Video</h2>
+			<p>videostretch is called for all video elements but works only on the last one and restores the rest<p>
+				
+			<video controls width="100%" id="video1" autoplay="false">				
+				<source src="video/sintel-trailer.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>					
+				<source src="video/sintel-trailer.ogv" type='video/ogg; codecs="theora, vorbis"'>
+				<source src="video/sintel-trailer.webm" type='video/webm; codecs="vp8, vorbis"' />
+			</video>
+			
+			<video controls  id="video2" autoplay="false">				
+				<source src="video/ToyStory_HTML5.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>	
+				<source src="video/ToyStory_HTML5.ogv" type='video/ogg; codecs="theora, vorbis"'>
+				<source src="video/ToyStory_HTML5.webm" type='video/webm; codecs="vp8, vorbis"' />			
+			</video>
+		</article>
+
+		
+</body>
+</html>
