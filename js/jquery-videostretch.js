@@ -1,11 +1,17 @@
 /*
+* @author Vassilis Triglianos <triglian@gmail.com>, Vassilis Papapanagiotou <bpapapana@gmail.com> 
+* @link https://github.com/bsquaredlabs/jquery-videostretch
+* @copyright Copyright &copy; 2011 BSquaredLabs(http://bsquaredlabs.com), Vassilis Triglianos & Vassilis Papapanagiotou
+* @license http://bsquaredlabs.com/licenses/jquery-videostretchLicense
+*/
+
+/*
  * jQuery Videostretch
  * Version 0.0.1
  *
  * Stretch HTML5 video to background of page
  *
- * Copyright (c) 2012 Vassilis Triglianos
- * Dual licensed under the MIT and GPL licenses.
+
 */
 
 ;(function($, window, undefined) {
