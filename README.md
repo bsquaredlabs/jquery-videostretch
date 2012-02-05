@@ -1,6 +1,6 @@
 # jQuery videostretch plugin
 
-jQuery plugin will take an HTML5 video element, place it in the background and stretch it. The script retains the intrinsic aspect ratio of the video.
+A jQuery plugin that will take an HTML5 video element, place it in the background and stretch it. The script retains the intrinsic aspect ratio of the video.
 
 ## Features
 
