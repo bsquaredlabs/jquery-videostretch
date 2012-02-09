@@ -16,7 +16,9 @@
 
 ;(function($, window, undefined) {
 
-	var vidRatio, hasResizeListener = false, $video = new Object();
+	var vidRatio, hasResizeListener = false, $video = {},
+	  rootElement = ("onorientationchange" in window) ? $(document) : $(window), // hack to acccount for iOS position:fixed shortcomings
+	  isiDevice = /iPad|iPhone|iPod/i.test(navigator.platform);
 
 	$.fn.videostretch = function() {
 
@@ -64,15 +66,23 @@
 			}
 
 			//remove video controls, add stretch class and store cached css on object
-			$video.removeAttr('controls').addClass('ui-videostretch').data('origCss', cssProps);
+			$video.addClass('ui-videostretch').data('origCss', cssProps);
 			$video.data('origProps', props);
+			
+			
+			
+			if(! isiDevice){
+				$video.removeAttr('controls');
+			}
 
 			var duration = $video.prop('duration');
+			
+			
+
 			
 			//we need the videoWidth and videoHeight properties of the video
 			// they are available when the durationchange event has fired
 			if(duration === undefined || isNaN(duration)) {
-
 				$video.bind("durationchange", function(e) {
 					computeRatio($video)
 					resizeHandler($video);
@@ -111,6 +121,9 @@
 	 */
 	function computeRatio(el) {
 		vidRatio = el.prop('videoWidth') / el.prop('videoHeight');
+		if(isiDevice){
+			$video.removeAttr('controls');
+		}
 	}
 	
 
@@ -120,7 +133,7 @@
 	 * Called when resize events from the browser window occur
 	 */
 	function resizeHandler(el) {
-		var vWidth, vHeight, vOffset, vCSS, rootElement = $(window);
+		var vWidth, vHeight, vOffset, vCSS;
 		
 		try {
 			vCSS = {
@@ -155,4 +168,4 @@
 		}
 	}
 
-})(jQuery, window);
+})(jQuery, window, document);
